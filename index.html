@@ -17,6 +17,7 @@
              
              let x = document.getElementById("result").value 
              entered = x;
+             let y;
              var letterNumber = /^[a-zA-Z]+$/;
              if(entered.match(letterNumber))
              {
@@ -25,19 +26,22 @@
              else
              {
              //alert(entered);
-             let y = eval(x)
+             //let y = eval(x)
              try {
-               let y = eval(x) 
+               y = eval(x) 
             } catch (e) {
     
             alert('Enter Valid Values...:)');
 
                }
-             output = y;
+               finally{
+                  output = y;
              //alert(y);
              document.getElementById("result").value = y;
              total = total+1;
              addHistory(total, entered, output); 
+               }
+
              }  
          } 
 
