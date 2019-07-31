@@ -12,16 +12,33 @@
            
          //function that evaluates the digit and return result 
          function solve() 
-         { 
+         {   
+              
+             
              let x = document.getElementById("result").value 
              entered = x;
+             var letterNumber = /^[a-zA-Z]+$/;
+             if(entered.match(letterNumber))
+             {
+                  alert("No Letters Please :)");
+             }
+             else
+             {
              //alert(entered);
-             let y = eval(x) 
+             let y = eval(x)
+             try {
+               let y = eval(x) 
+            } catch (e) {
+    
+            alert('Enter Valid Values...:)');
+
+               }
              output = y;
              //alert(y);
              document.getElementById("result").value = y;
              total = total+1;
-             addHistory(total, entered, output);   
+             addHistory(total, entered, output); 
+             }  
          } 
 
          function addHistory(total, entered, output)
